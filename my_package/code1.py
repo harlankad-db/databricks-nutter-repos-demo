@@ -8,6 +8,7 @@ def generate_data1(spark, n=1000, name='my_cool_data'):
     df.createOrReplaceTempView(name)
 
 def upper_columns(df: DataFrame, cols: list) -> DataFrame:
+    """Replace specified columns with upper-cased strings"""
     new_cols = []
     for field in df.schema.fields:
         if field.dataType == T.StringType() and field.name in cols:
