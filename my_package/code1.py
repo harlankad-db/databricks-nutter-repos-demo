@@ -3,6 +3,7 @@ import pyspark.sql.types as T
 from pyspark.sql import DataFrame
 
 def generate_data1(spark, n=1000, name='my_cool_data'):
+  """Create a temp view with a range of data"""
     df = spark.range(0, n)
     df.createOrReplaceTempView(name)
 
